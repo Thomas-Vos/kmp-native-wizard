@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.kotlinxSerialization)
+    id("org.jetbrains.kotlinx.atomicfu") version "0.28.0"
 }
 
 group = "me.user"
@@ -8,6 +9,11 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven("https://redirector.kotlinlang.org/maven/dev") {
+        content {
+            includeGroupByRegex("org\\.jetbrains\\..*")
+        }
+    }
 }
 
 kotlin {

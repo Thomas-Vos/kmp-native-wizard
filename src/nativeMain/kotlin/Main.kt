@@ -18,4 +18,6 @@ fun main() {
         content = "Hello!"
     )
     println(PrettyPrintJson.encodeToString(message))
+
+    bar()
 }
