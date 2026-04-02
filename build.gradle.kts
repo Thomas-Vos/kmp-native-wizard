@@ -20,15 +20,19 @@ kotlin {
 
     targets.withType<KotlinNativeTarget>().configureEach {
         binaries {
-            executable {
-                entryPoint = "main"
-            }
+//            executable {
+//                entryPoint = "main"
+//            }
+            sharedLib {}
         }
     }
 
     sourceSets {
-        nativeMain.dependencies {
-            implementation(libs.kotlinxSerializationJson)
+//        nativeMain.dependencies {
+//            implementation(libs.kotlinxSerializationJson)
+//        }
+        linuxMain.dependencies {
+            implementation("io.ktor:ktor-client-curl:3.4.2")
         }
     }
 }
